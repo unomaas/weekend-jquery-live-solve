@@ -26,10 +26,15 @@ function renderDom() {
   $.ajax({
     method: 'GET',
     url: '/operations',
-  }).then (res => {
+  }).then ( res => {
     console.log('Res: ', res);
-    
-  }).catch (err => {
+    $('#operationsOutput').empty();
+    for (let operation of res) {
+      $('#operationsOutput').append(`
+      <li>${operation.firstNumber} ${operation.operator} ${operation.secondNumber} = ${operation.result}</li>
+      `);
+    }
+  }).catch ( err => {
     console.log('Err: ', err);
   })
 } // End renderDom function. 
@@ -54,6 +59,7 @@ function clickedEquals() {
   }).catch( err => {
     console.log('POST /operations failed:', err);
   })
+  renderDom();
 } // End clickedEquals. 
 //#endregion ⬆⬆ GET/POST Functions above. 
 
