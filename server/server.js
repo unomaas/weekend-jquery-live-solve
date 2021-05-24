@@ -1,13 +1,14 @@
-// ⬇ Server setup below: 
+//#region ⬇⬇ Server setup below: 
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 const PORT = 5000;
+// ⬇ Shows when the server is running below:
 app.listen(PORT, () => {
   console.log('PORT Running On:', PORT);
 });
-// ⬇ Parse application/x-www-form-urlencoded:
-app.use(bodyParser.urlencoded({ extended:true }))
-// ⬇ Serve static assets/files: 
+// ⬇ This must be added before GET & POST routes below:
+app.use(bodyParser.urlencoded({ extended: true }));
+// ⬇ Serve up static files (HTML, CSS, Client JS) below:
 app.use(express.static( 'server/public' ));
-
-
+//#endregion ⬆⬆ Server setup above. 

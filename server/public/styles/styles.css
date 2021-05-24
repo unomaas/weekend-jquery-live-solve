@@ -8,17 +8,3 @@ ul {
   list-style-type: none;
 }
 
-h1, h2, h3, h4 {
-  color: black;
-  text-shadow: 1px 1px white;
-}
-
-li, #resultOutput {
-  color: white;
-  font-size: 35px;
-  text-shadow: 2px 2px black;
-}
-
-.clickedButton {
-  background-color: rgb(58,175,220, );
-}
