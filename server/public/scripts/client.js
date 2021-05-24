@@ -16,7 +16,9 @@ let operator; // To store operator clicked.
 //#endregion ⬆ Global variables above. 
 //#endregion ⬆⬆ All document setup and global variables above. 
 
+
 //#region ⬇⬇ GET/POST Functions Below: 
+// ⬇ POST /operations clickedEquals function: 
 function clickedEquals() {
   console.log('Test Log: in clickedEquals function.');
   const firstNumber = $('#firstNumberInput').val();
@@ -34,19 +36,16 @@ function clickedEquals() {
   }).catch( err => {
     console.log('POST /operations failed:', err);
   })
-}
-
-
-
-
+} // End clickedEquals. 
 //#endregion ⬆⬆ GET/POST Functions above. 
 
 
 //#region ⬇⬇ Operator Button Functions Below: 
 function clickedOperators() {
+  // ⬇ Changes global variable to the text contained in this button:
   operator = $(this).text();
   console.log('Test Log: in clickedOperators function.', operator);
-}
+} // End clickedOperators. 
 //#endregion ⬆⬆ Operator Button Functions above. 
 
 
