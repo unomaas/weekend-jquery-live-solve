@@ -5,16 +5,35 @@ function readyNow() {
   // ⬇ Document ready & rendered:
   console.log( "jQuery is loaded!" ) 
   // renderDom();
+  // ⬇ Event handlers below:
+  $(document).on('click', '#equalsButton', clickedEquals); // Edan does his full path down. 
 }
 //#endregion ⬆ readyNow document ready functionality above. 
-
 
 //#region ⬇ Global variables below:
 //#endregion ⬆ Global variables above. 
 //#endregion ⬆⬆ All document setup and global variables above. 
 
-
-
+//#region ⬇⬇ GET/POST Functions Below: 
+function clickedEquals() {
+  console.log('Test Log: in clickedEquals');
+  const firstNumber = $('#firstNumberInput').val();
+  const secondNumber = $('#secondNumberInput').val();
+  $.ajax({
+    method: 'POST',
+    url: '/operations',
+    data: {
+      firstnumber: firstNumber,
+      secondNumber: secondNumber,
+      // To do: operator: 
+    }
+  }).then( res => {
+    console.log('POST /operations complete:', res );
+  }).catch( err => {
+    console.log('POST /operations failed:', err);
+  })
+}
+//#endregion ⬆⬆ GET/POST Functions above. 
 
 
 

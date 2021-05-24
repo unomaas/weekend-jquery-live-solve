@@ -1,11 +1,12 @@
 ## Feature List: 
 
 Client Side: 
-- [] "Calculator" Form:
-  - [] Two inputs which are numbers.
-  - [] Select type of mathematical operation.
-  - [] A submit ("equals") button.
-  - [] A "C" button to clear input fields. 
+- [x] "Calculator" Form:
+  - [x] Two inputs which are numbers.
+  - [x] Select type of mathematical operation.
+  - [x] A submit ("equals") button.
+    - [] Needs to grab input field values.  
+  - [x] A "C" button to clear input fields. 
 - [] POST data from form to server.
 - [] Display list of previous operations at bottom.
   - [] Update list after every new calculation.
