@@ -26,15 +26,19 @@ Setup:
   - [x] Run the following codes in terminal separately:
     - [x] "npm init --y" : Installs node (aka npm).
     - [x] "npm install express body-parser" : Installs express server with bodyParser.  
-- [] Setup express server.
-  - [] Body Parser. 
-- [] HTML/CSS/JS fleshed out. 
-- [] jQuery installed (bootstrap, etc.). 
+- [x] Setup express server.
+  - [x] Body Parser. 
+- [x] HTML/CSS/JS fleshed out. 
+- [x] jQuery installed (bootstrap, etc.). 
 
 Planning:
 - [x] Make a To Do list. 
 - [x] Plan the data model. 
 - [x] Plan the API end points. 
+
+Stuff for Later:
+- [] Make it look pretty.
+- [] Clean up code. 
 
 
 ## Ryan's Notes on Edan's Processes:
