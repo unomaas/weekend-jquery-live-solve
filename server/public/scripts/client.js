@@ -7,16 +7,18 @@ function readyNow() {
   // renderDom();
   // ⬇ Event handlers below:
   $(document).on('click', '#equalsButton', clickedEquals); // Edan does his full path down. 
-}
+  $(document).on('click', '.operatorButtons', clickedOperators);
+} // End readyNow. 
 //#endregion ⬆ readyNow document ready functionality above. 
 
 //#region ⬇ Global variables below:
+let operator; // To store operator clicked.
 //#endregion ⬆ Global variables above. 
 //#endregion ⬆⬆ All document setup and global variables above. 
 
 //#region ⬇⬇ GET/POST Functions Below: 
 function clickedEquals() {
-  console.log('Test Log: in clickedEquals');
+  console.log('Test Log: in clickedEquals function.');
   const firstNumber = $('#firstNumberInput').val();
   const secondNumber = $('#secondNumberInput').val();
   $.ajax({
@@ -25,7 +27,7 @@ function clickedEquals() {
     data: {
       firstnumber: firstNumber,
       secondNumber: secondNumber,
-      // To do: operator: 
+      operator: operator,
     }
   }).then( res => {
     console.log('POST /operations complete:', res );
@@ -33,9 +35,19 @@ function clickedEquals() {
     console.log('POST /operations failed:', err);
   })
 }
+
+
+
+
 //#endregion ⬆⬆ GET/POST Functions above. 
 
 
+//#region ⬇⬇ Operator Button Functions Below: 
+function clickedOperators() {
+  operator = $(this).text();
+  console.log('Test Log: in clickedOperators function.', operator);
+}
+//#endregion ⬆⬆ Operator Button Functions above. 
 
 
 
