@@ -4,10 +4,12 @@ $( readyNow );
 function readyNow() {
   // ⬇ Document ready & rendered:
   console.log( "jQuery is loaded!" ) 
-  // renderDom();
   // ⬇ Event handlers below:
   $(document).on('click', '#equalsButton', clickedEquals); // Edan does his full path down. 
   $(document).on('click', '.operatorButtons', clickedOperators);
+  // ⬇ Load page on ready:
+    renderDom();
+
 } // End readyNow. 
 //#endregion ⬆ readyNow document ready functionality above. 
 
@@ -18,6 +20,22 @@ let operator; // To store operator clicked.
 
 
 //#region ⬇⬇ GET/POST Functions Below: 
+// ⬇ Get /operations renderDom function below: 
+function renderDom() {
+  console.log('Test Log: in renderDom function.');
+  $.ajax({
+    method: 'GET',
+    url: '/operations',
+  }).then (res => {
+    console.log('Res: ', res);
+    
+  }).catch (err => {
+    console.log('Err: ', err);
+  })
+} // End renderDom function. 
+// ⬆ Get /operations renderDom function above.
+
+
 // ⬇ POST /operations clickedEquals function: 
 function clickedEquals() {
   console.log('Test Log: in clickedEquals function.');
@@ -27,7 +45,7 @@ function clickedEquals() {
     method: 'POST',
     url: '/operations',
     data: {
-      firstnumber: firstNumber,
+      firstNumber: firstNumber,
       secondNumber: secondNumber,
       operator: operator,
     }
